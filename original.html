@@ -1,0 +1,60 @@
+<!DOCTYPE html5>
+
+<html>
+    <body>
+    <script>
+        function computerPlay() {
+            var i = Math.floor(Math.random() * 3) + 1;
+
+            if (i == 1) {
+                return ("rock");
+            } else if (i == 2) {
+                return ("paper");
+            } else if (i == 3) {
+                return ("scissors");
+            } else {
+                return ("Error!");
+            }
+        }
+
+        const computerSelection = computerPlay();
+        const playerSelection = prompt("Pick one: Rock, Paper, or Scissors").toLowerCase();
+        
+        function playRound (playerSelection, computerSelection) {
+            var win = true;
+
+            if (playerSelection === "rock" && computerSelection === "rock") {
+                return ("It's a tie!");
+                return win = "Tie";
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
+                return ("You Lose!");
+                return win = false;
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                return ("You Win!");
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                return ("You Win!");
+            } else if (playerSelection === "paper" && computerSelection === "paper") {
+                return ("It's a Tie!");
+                return win = "Tie";
+            } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                return ("You Lose!");
+                return win = false;
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                return ("You Lose!");
+                return win = false;
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                return ("You Win!");
+            } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+                return ("It's a Tie!");
+                return win = "Tie";
+            } else {
+                return win = "Tie";
+                return ("Error!");
+            }
+        }
+
+        console.log(playRound(playerSelection, computerSelection));
+        console.log("The computer chose " + computerSelection);
+    </script>
+    </body>
+</html>
